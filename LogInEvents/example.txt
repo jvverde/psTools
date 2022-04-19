@@ -1,0 +1,2 @@
+Import-Module .\LoginEvents.ps1
+Get-LastLoginInfo -ComputerName PT-CARR-DPC-63 -DaysFromToday 365 -LoginEvent FailedLogin
