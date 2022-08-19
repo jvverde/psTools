@@ -1,0 +1,13 @@
+<!-- https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-configure-using-wsb-file -->
+<Configuration>
+	<MappedFolders>
+	   <MappedFolder>
+			 <HostFolder>C:\Tools\myscripts\SandBox\guest-scripts</HostFolder>
+			 <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\My-scripts</SandboxFolder> 
+			 <ReadOnly>true</ReadOnly>
+	   </MappedFolder>
+	</MappedFolders>
+	<LogonCommand>
+  	<Command>PowerShell Start-Process PowerShell -WorkingDirectory 'C:\Users\WDAGUtilityAccount\Desktop\My-scripts' -ArgumentList '-ExecutionPolicy Bypass -NoExit -File init.ps1'</Command>
+	</LogonCommand>
+</Configuration>

@@ -71,7 +71,8 @@ Function Install-WinGet {
             $file = Join-Path -path $SandboxDownloads -ChildPath $data.name
 
             Write-Verbose "[$((Get-Date).TimeofDay)] Saving to $file"
-            Invoke-WebRequest -Uri $appx -UseBasicParsing -DisableKeepAlive -OutFile $file
+            #Invoke-WebRequest -Uri $appx -UseBasicParsing -DisableKeepAlive -OutFile $file
+            $WebClient.DownloadFile($appx, $file)
 
             Write-Verbose "[$((Get-Date).TimeofDay)] Adding Appx Package"
             Add-AppxPackage -Path $file -ErrorAction Stop
